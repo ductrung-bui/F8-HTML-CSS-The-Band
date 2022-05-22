@@ -7,6 +7,7 @@
 
 html{
     scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
 }
 /* 
 Vị trí
@@ -16,12 +17,13 @@ Kiểu dáng
 */
 #header{
     background-color: black;
-    height: 45px; 
+    height: 50px; 
     position: fixed;
     right: 0;
     left: 0;
     top: 0;
     z-index: 999;
+    /* overflow: hidden; */
 }
 
 #nav {
@@ -52,7 +54,7 @@ Kiểu dáng
 #nav > li:hover > a {
     background-color: white;
     color: black;
-    display: inline-block;
+    display: block;
 }
 
 #nav li:hover .subnav{
@@ -86,12 +88,24 @@ Kiểu dáng
     line-height: 38px;
 }
 
-#header .search-btn{
-    float: right;
+#header .menu-icon,
+#header .search-icon{
     color: white;
     line-height: 45px;
     font-size: 20px;
+}
+
+#header .mobile-menu-btn, 
+#header .search-btn{
+    float: right;
     padding: 0 16px;
+}
+
+#header .mobile-menu-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
 }
 
 #header .search-btn:hover{
@@ -99,6 +113,14 @@ Kiểu dáng
     transition: all 1s ease;
     cursor: pointer;
     font-weight: 900;
+}
+
+#header .mobile-menu-btn:hover .menu-icon{
+    color: #000
+}
+
+#header .mobile-menu-btn:hover{
+    background-color: grey;
 }
 
 #slider{
@@ -153,6 +175,8 @@ Kiểu dáng
 #content .content-about-2{
     text-align: justify;
     line-height: 1.4;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 #content .member{
     float: left;
@@ -160,7 +184,7 @@ Kiểu dáng
     text-align: center;
 }
 #content .member-image{
-    height: 150px;
+    height: auto;
     width: 150px;
     /* margin-top: 15px; */
     border-radius: 4px;
@@ -200,7 +224,7 @@ Kiểu dáng
 
 .tour-section{
     padding: 50px 50px;
-    height: 750px;
+    height: auto;
 
 }
 
@@ -284,6 +308,7 @@ img.places-img:hover{
 .places-body .places-buy-btn:hover{
     color: black;
     background-color: rgb(170, 168, 168);
+   cursor: pointer;
 }
 
 /* #footer{
@@ -499,7 +524,7 @@ img.places-img:hover{
 
 .row{
     margin-left: -8px;
-    margin-right: -8px;
+    /* margin-right: -8px; */
 }
 
 .col{
@@ -519,3 +544,11 @@ img.places-img:hover{
 .col-full{
     width: 100%;
 }
+
+
+
+/* 
+PC: >= 1024px
+Tablet: >= 740px & < 1024px
+mobile: < 740px
+ */
